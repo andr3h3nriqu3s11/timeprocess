@@ -420,6 +420,11 @@ pub fn main() anyerror!void {
         return;
     }
 
+    if (clock and clockName == null) {
+        try stderr.print("No name for the entry.", .{});
+        return;
+    }
+
     var file = try std.fs.openFileAbsolute(filePath.?, .{ .write = true, .read = true });
 
     var r = try file.reader().readAllAlloc(allocator, 1024 * @sizeOf(u8));
