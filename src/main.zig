@@ -620,7 +620,7 @@ pub fn main() anyerror!void {
         if (!ledgerFormat) {
             try stdout.writer().print("{s} {}\n", .{ item.name, item.dif });
         } else {
-            try stdout.writer().print("{}-{}-{} {s} - {}:{}\n\ttime:all\t{} min\n\ttime:{s}\n\n", .{ item.date.year, item.date.month, item.date.day, item.name, item.time.hour, item.time.minute, item.dif, item.name });
+            try stdout.writer().print("{}-{}-{} {s} - {}:{}\n\ttime:{s}\t{} min\n\ttime:all\n\n", .{ item.date.year, item.date.month, item.date.day, item.name, item.time.hour, item.time.minute, item.name, item.dif });
         }
     }
 
